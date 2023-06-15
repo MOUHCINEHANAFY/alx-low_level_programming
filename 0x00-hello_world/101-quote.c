@@ -4,7 +4,7 @@
  * main - the main function print :
  * and that piece of art is useful
  * " - Dora Korpar, 2015-10-19"
- * Retun: return 1 if succeed
+ * Return: return 1 if succeed
  */
 int main(void)
 {
