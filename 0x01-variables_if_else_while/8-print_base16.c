@@ -9,7 +9,7 @@ int main(void)
 {
 	int hexVar = 0x00;
 
-	while ( hexVar < 0x0a )
+	while (hexVar < 0x0a)
 	{
 		putchar('0' + hexVar);
 		hexVar++;
