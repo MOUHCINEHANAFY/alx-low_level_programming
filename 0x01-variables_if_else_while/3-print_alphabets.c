@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-/**main - print lowercase alphabet the uppercase
+/**
+ * main - print lowercase alphabet the uppercase
  * new line add at the end
  * Return: retun 0 if succesful
  */
@@ -15,5 +16,6 @@ int main(void)
 	{
 		putchar(ch);
 	}
+putchar('\n');
 return (0);
 }
