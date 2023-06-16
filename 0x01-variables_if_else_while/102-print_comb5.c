@@ -11,16 +11,16 @@ int main(void)
 	int first;
 	int second;
 
-	for (first = 0; first < 100; first++)
+	for (first = 0; first < 99; first++)
 	{
-		for (second = first; second < 100; second++)
+		for (second = first; second < 99; second++)
 		{
 			putchar('0' + (first / 10));
 			putchar('0' + (first % 10));
 			putchar(' ');
 			putchar('0' + (second / 10));
 			putchar('0' + (second % 10));
-			if (first != 99 || second != 99)
+			if (first != 98 || second != 99)
 			{
 				putchar(',');
 				putchar(' ');
