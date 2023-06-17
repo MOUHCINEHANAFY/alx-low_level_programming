@@ -15,6 +15,8 @@ int main(void)
 	{
 		for (second = first; second < 99; second++)
 		{
+			if (second > first)
+			{
 			putchar('0' + (first / 10));
 			putchar('0' + (first % 10));
 			putchar(' ');
@@ -24,7 +26,11 @@ int main(void)
 			{
 				putchar(',');
 				putchar(' ');
+
+
 			}
+			}
+
 		}
 	}
 	putchar('\n');
