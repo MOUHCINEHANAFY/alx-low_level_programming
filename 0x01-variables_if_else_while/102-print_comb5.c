@@ -11,9 +11,9 @@ int main(void)
 	int first;
 	int second;
 
-	for (first = 0; first < 99; first++)
+	for (first = 0; first <= 99; first++)
 	{
-		for (second = first; second < 99; second++)
+		for (second = first; second <= 99; second++)
 		{
 			if (second > first)
 			{
