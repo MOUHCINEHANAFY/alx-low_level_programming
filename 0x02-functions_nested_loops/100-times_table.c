@@ -24,7 +24,7 @@ void print_times_tables(int n)
 				_putchar(multi_0 + '0');
 				_putchar(multi + '0');
 			}
-			else if (multi_0 > = 100)
+			else if (multi_0 >= 100)
 			{
 				multi = multi_0 % 10;
 				table = (multi_0 / 10) % 10;
