@@ -1,53 +1,47 @@
 #include "main.h"
 
 /**
- * print_times_table - print tables
- * @n: tables times itterance
+ * print_times_table - Print table multipl times
+ * @n: number of times
  */
 
 void print_times_table(int n)
 {
-	int a, b, multi_0, multi, table;
+	int number, multiplication, production;
 
-		for (a = 0; a <= n; a++)
+	if (n >= 0 && n <= 15)
+	{
+		for (number= 0; number<= n; number++)
 		{
-		for (b = 0; b <= n; b++)
-		{
-			multi_0 = a * b;
-			if (multi_0 > 9)
-			{
-				multi = multi_0 % 10;
-				multi_0 /= 10;
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(multi_0 + '0');
-				_putchar(multi + '0');
-			}
-			else if (multi_0 > 99)
-			{
-				multi = multi_0 % 10;
-				table = (multi_0 / 10) % 10;
-				multi_0 /= 100;
-				_putchar(',');
-				_putchar(' ');
-				_putchar(multi_0 + '0');
-				_putchar(table + '0');
-				_putchar(multi + '0');
-			}
-			else if (multi_0 == 0 && b == 0)
-			{
-				_putchar(multi_0 + '0');
-			}
-			else
+			_putchar('0');
+
+			for (multiplication= 1; multiplication<= n; multiplication++)
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(multi_0 + '0');
+
+				production = number * multiplication;
+
+				if (production <= 9)
+				{
+					_putchar(' ');
+				}
+				if (production <= 99)
+				{
+					_putchar(' ');
+				}
+				if (production > 99)
+				{
+					_putchar((production / 100) + '0');
+					_putchar(((production / 10)) % 10 + '0');
+				}
+				else if (production < 100 && production > 9)
+				{
+					_putchar((production / 10) + '0');
+				}
+				_putchar((production % 10) + '0');
 			}
+			_putchar('\n');
 		}
-		_putchar('\n');
-		}
+	}
 }
