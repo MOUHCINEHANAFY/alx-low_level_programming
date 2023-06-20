@@ -14,7 +14,7 @@ void print_times_table(int n)
 		for (b = 0; b <= n; b++)
 		{
 			multi_0 = a * b;
-			if (multi_0 >= 10)
+			if (multi_0 > 9)
 			{
 				multi = multi_0 % 10;
 				multi_0 /= 10;
@@ -24,7 +24,7 @@ void print_times_table(int n)
 				_putchar(multi_0 + '0');
 				_putchar(multi + '0');
 			}
-			else if (multi_0 >= 100)
+			else if (multi_0 > 99)
 			{
 				multi = multi_0 % 10;
 				table = (multi_0 / 10) % 10;
