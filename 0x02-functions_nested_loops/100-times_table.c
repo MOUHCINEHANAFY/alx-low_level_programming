@@ -5,7 +5,7 @@
  * @n: tables times itterance
  */
 
-void print_times_tables(int n)
+void print_times_table(int n)
 {
 	int a, b, multi_0, multi, table;
 
