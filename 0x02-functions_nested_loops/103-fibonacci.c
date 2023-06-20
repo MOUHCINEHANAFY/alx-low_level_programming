@@ -11,7 +11,7 @@ int main(void)
 	unsigned long f1 = 0, f2 = 1, add;
 	float global_addition;
 
-	while (true)
+	while (1)
 	{
 		add = f1 + f2;
 		if ((add % 2) == 0)
