@@ -10,7 +10,7 @@ void jack_bauer(void)
 
 	for (a = 0; a < 24; a++)
 	{
-		for ( b = 0; b <= 59; b++)
+		for (b = 0; b <= 59; b++)
 		{
 			hours_1 = a / 10;
 			hours_2 = a % 10;
@@ -18,6 +18,7 @@ void jack_bauer(void)
 			minutes_2 = b % 10;
 			_putchar(hours_1 + '0');
 			_putchar(hours_2 + '0');
+			_putchar(':');
 			_putchar(minutes_1 + '0');
 			_putchar(minutes_2 + '0');
 			_putchar('\n');
