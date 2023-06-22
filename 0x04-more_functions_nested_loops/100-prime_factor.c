@@ -8,27 +8,27 @@
 
 int main(void)
 {
-	long long num_const = 612852475143;
-	long long factor = 1;
+long num_const = 612852475143;
+long factor = 1;
 
-	for (long long i = 2; i * i <= num_const; i++)
-	{
-	if (num_const % i == 0)
-	{
-		factor = i;
-			while (num_const % i == 0)
-			{
-				num_const /= i;
-			}
-	}
-	}
+for (long i = 2; i * i <= num_const; i++)
+{
+if (num_const % i == 0)
+{
+factor = i;
+while (num_const % i == 0)
+{
+num_const /= i;
+}
+}
+}
 
-	if (num_const > 1)
-	{
-	factor = num_const;
-	}
+if (num_const > 1)
+{
+factor = num_const;
+}
 
-	printf("%lld\n", factor);
+printf("%ld\n", factor);
 
-	return (0);
+return (0);
 }
