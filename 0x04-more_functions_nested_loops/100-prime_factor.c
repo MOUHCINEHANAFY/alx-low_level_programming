@@ -9,9 +9,9 @@
 int main(void)
 {
 long num_const = 612852475143;
-long factor = 1;
+long factor = 1, i;
 
-for (long i = 2; i * i <= num_const; i++)
+for (i = 2; i * i <= num_const; i++)
 {
 if (num_const % i == 0)
 {
