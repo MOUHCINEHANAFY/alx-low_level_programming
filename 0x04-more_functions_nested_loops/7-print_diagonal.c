@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_diagonal: This function print diagonal lines
+ * print_diagonal -  This function print diagonal lines
  * @n: lenght of the line
  */
 
@@ -18,7 +18,6 @@ void print_diagonal(int n)
 				_putchar(' ');
 			}
 			_putchar('\\');
-
 			if (lenght == n - 1)
 				continue;
 
