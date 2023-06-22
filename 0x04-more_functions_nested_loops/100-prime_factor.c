@@ -8,22 +8,23 @@
 
 int main(void)
 {
-	long p_number = 612852475143, factor;
+	long int i, counter, J, constant = 612852475143;
+	int factor;
 
-	while ((p_number / 2) >= factor)
+	for (i = 2; i < constant / 2; i++)
 	{
-		if ((p_number % 2) == 0)
-		{
-			p_number = p_number / 2;
-			continue;
-		}
-		for (factor = 3; factor < (p_number / 2); factor += 2)
-		{
-			if ((p_number % factor) == 0)
-				p_number = p_number / factor;
-		}
+		factor = 1;
+		if (constant % i == 0)
+			J = constant / i;
+
+		for (counter = 2; counter < J / 2; counter++)
+			if (J % counter == 0)
+				factor = 0;
+				break;
+		if (factor)
+			printf("%ld\n", J);
+			break;
 	}
-	printf("%ld\n", p_number);
+
 	return (0);
 }
-
