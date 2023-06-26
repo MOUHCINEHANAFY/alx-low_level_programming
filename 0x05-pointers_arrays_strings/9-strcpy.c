@@ -8,7 +8,7 @@
  * Return: destination string pointer
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest,const char *src)
 {
 	int idx = 0;
 
@@ -17,7 +17,5 @@ char *_strcpy(char *dest, char *src)
 	dest[idx] = src[idx];
 	idx++;
 	}
-	idx = idx +1;
-	dest[idx] = '\0';
 return (dest);
 }
