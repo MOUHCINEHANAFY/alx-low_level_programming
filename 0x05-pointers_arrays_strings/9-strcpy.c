@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * _strcpy - This function copy string pointed by src
  * to dest include null character
