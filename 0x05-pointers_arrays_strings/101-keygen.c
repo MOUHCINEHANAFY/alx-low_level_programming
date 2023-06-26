@@ -10,9 +10,9 @@
 int main(void)
 {
 	int a = 0, b = 0;
-	time_t b;
+	time_t x;
 
-	srand((unsigned int) time(&b));
+	srand((unsigned int) time(&x));
 
 	for (; b < 2772;)
 	{
