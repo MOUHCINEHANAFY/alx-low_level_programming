@@ -8,14 +8,19 @@
  * Return: destination string pointer
  */
 
-char *_strcpy(char *dest,const char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int idx = 0;
+	int length;
 
-	while (src[idx])
+	while (src[length] != '\0')
 	{
-	dest[idx] = src[idx];
-	idx++;
+	length++;
+	}
+	while (idx <= lenght)
+	{
+		dest[idx] = src[idx];
+		idx++;
 	}
 return (dest);
 }
