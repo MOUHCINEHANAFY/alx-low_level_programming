@@ -12,7 +12,7 @@ int main(void)
 	int a = 0, b = 0;
 	time_t b;
 
-	srand((unsigned int) time(&t));
+	srand((unsigned int) time(&b));
 
 	for (; b < 2772;)
 	{
