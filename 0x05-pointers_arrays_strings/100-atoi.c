@@ -12,7 +12,7 @@ int _atoi(char *s)
 
 	while (*(s + conter) != '\0')
 	{
-		if ((*(s + conter) > '9' || length > )0 && (*(s + conter) < '0'))
+		if (length > 0 && (*(s + conter) < '0' || *(s + conter) > '9'))
 		{
 			break;
 		}
