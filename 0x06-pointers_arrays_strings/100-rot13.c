@@ -6,7 +6,7 @@
  * Return: result of string encoded
  */
 
-char *rot(char *s)
+char *rot13(char *s)
 {
 	int counter = 0, i;
 	char characters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
