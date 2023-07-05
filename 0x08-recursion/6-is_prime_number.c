@@ -26,3 +26,12 @@ int function1(int n, int a)
  * @n: number to calculate
  * Return: result
  */
+
+int is_prime_number(int n)
+{
+	if (n == -1 || n == 0 || n == 1)
+	{
+		return (0);
+	}
+	return (function1(n, 2));
+}
