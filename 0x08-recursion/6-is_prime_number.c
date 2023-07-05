@@ -25,3 +25,4 @@ int function1(int n, int a)
  * is_prime_number - prime number calcuation
  * @n: number to calculate
  * Return: result
+ */
