@@ -30,7 +30,7 @@ int help(char *f, char *r, int lent)
 
 int f_lengh(char *str, int lent)
 {
-	if (*(str + len) != '\0')
+	if (*(str + lent) != '\0')
 	{
 		return (f_lengh(str, ++lent));
 	}
