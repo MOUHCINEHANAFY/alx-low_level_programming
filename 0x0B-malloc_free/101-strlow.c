@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
 
 
@@ -23,14 +23,15 @@ int word_lenght(char *str)
 }
 
 /**
- * count_w - Counts the number of words contained within a string.
+ * count_words - Counts the number of words contained within a string.
  * @str: The string to be searched.
  *
  * Return: The number of words contained within str.
  */
+
 int count_w(char *str)
 {
-	int i = 0, w = 0, lenght = 0;
+	int i = 0, words = 0, lenght = 0;
 
 	for (i = 0; *(str + i); i++)
 		lenght++;
@@ -39,46 +40,43 @@ int count_w(char *str)
 	{
 		if (*(str + i) != ' ')
 		{
-			w++;
+			words++;
 			i += word_lenght(str + i);
 		}
 	}
 
-	return (w);
+	return (words);
 }
 
 /**
- * strtow - Splits a string into w.
+ * strtow - Splits a string into words.
  * @str: The string to be split.
  *
  * Return: If str = NULL, str = "", or the function fails - NULL.
- *         Otherwise - a pointer to an array of strings (w).
+ *         Otherwise - a pointer to an array of strings (words).
  */
 char **strtow(char *str)
 {
 	char **strings;
-	int i = 0, wi, w, letters, l;
+	int i = 0, words, w, characters, l;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
-	wi = count_w(str);
-	if (wi == 0)
+	words = count_w(str);
+	if (words == 0)
 		return (NULL);
 
-	strings = malloc(sizeof(char *) * (wi + 1));
+	strings = malloc(sizeof(char *) * (words + 1));
 	if (strings == NULL)
 		return (NULL);
 
-	for (w = 0; w < wi; w++)
+	for (w = 0; w < words; w++)
 	{
 		while (str[i] == ' ')
 			i++;
-
-		letters = word_lenght(str + i);
-
-		strings[w] = malloc(sizeof(char) * (letters + 1));
-
+		characters = word_lenght(str + i);
+		strings[w] = malloc(sizeof(char) * (characters + 1));
 		if (strings[w] == NULL)
 		{
 			while (w >= 0)
@@ -86,18 +84,13 @@ char **strtow(char *str)
 				free(strings[w]);
 				w--;
 			}
-
 			free(strings);
 			return (NULL);
 		}
-
-		for (l = 0; l < letters; l++)
+		for (l = 0; l < characters; l++)
 			strings[w][l] = str[i++];
-
 		strings[w][l] = '\0';
 	}
 	strings[w] = NULL;
-
 	return (strings);
 }
-
