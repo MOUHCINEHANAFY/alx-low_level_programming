@@ -33,8 +33,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	lenght2++;
 	name2 = malloc(lenght1);
 	if (!name2)
+	{
 		free(pointer);
 		return (NULL);
+	}
 	owner2 = malloc(lenght2);
 	if (!owner2)
 	{
