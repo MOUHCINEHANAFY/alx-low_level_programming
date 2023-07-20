@@ -70,36 +70,38 @@ void print_float(va_list arg)
  * @...: VAR number of arguments to be printed.
  * Description: This function printes all
  */
+
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, index = 0;
+	int i = 0, j = 0;
 	char *separator = "";
 	printer_t funcs[] = {
-		{"i", print_int},
 		{"c", print_char},
-		{"s", print_string},
-		{"f", print_float}
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string}
 	};
 
 	va_start(args, format);
 
 	while (format && (*(format + i)))
 	{
-		index = 0;
+		j = 0;
 
-		while ((*(format + i) != *(funcs[index].symbol)) && index < 4)
-			index++;
+		while (j < 4 && (*(format + i) != *(funcs[j].symbol)))
+			j++;
 
-		if (index < 4)
+		if (j < 4)
 		{
 			printf("%s", separator);
-			funcs[index].print(args);
+			funcs[j].print(args);
 			separator = ", ";
 		}
 
 		i++;
 	}
+
 	printf("\n");
 
 	va_end(args);
