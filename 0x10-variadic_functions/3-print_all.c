@@ -86,7 +86,7 @@ void print_all(const char * const format, ...)
 
 	while (format && (*(format + i)))
 	{
-		indx = 0;
+		index = 0;
 
 		while ((*(format + i) != *(funcs[index].symbol)) && index < 4)
 			index++;
