@@ -17,8 +17,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		return (-1);
 	}
-	for (i = 0, listemel = *head; listemel && index
-			; i++, listemel = (*listemel).next)
+	for (i = 0, listemel = *head; listemel && index; i++, listemel = (*listemel).next)
 		if (i == (index - 1))
 		{
 			action = 1;
@@ -45,5 +44,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(*head);
 		return (1);
 	}
-	return(-1)
+
+	return (-1);
 }
