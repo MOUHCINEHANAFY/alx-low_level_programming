@@ -9,7 +9,7 @@
 
 size_t print_listint(const listint_t *h)
 {
-	int nb;
+	size_t nb;
 
 	for (nb = 0; h; h = (*h).next, nb++)
 	{
