@@ -32,14 +32,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(supr);
 		return (1);
 	}
-
-	else if (!index && *head)
-	{
-		*head = NULL;
-		free(*head);
-		return (1);
-	}
-
 	else if (!index && (**head).next)
 	{
 		supr = *head;
@@ -47,6 +39,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(supr);
 		return (1);
 	}
-
-	return (-1);
+	else if (!index && *head)
+	{
+		*head = NULL;
+		free(*head);
+		return (1);
+	}
+	return(-1)
 }
