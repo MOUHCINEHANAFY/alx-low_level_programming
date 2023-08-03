@@ -8,30 +8,28 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int size;
-	unsigned int uint, pos;
+	unsigned int decimal, i;
 
-	if (!b)
-	{
+	if (!b || !*b)
 		return (0);
-	}
-	for (size = 0; b[size]; size++)
-		;
-	size--;
-	for (pos = 1, uint = 0; size >= 0; size--)
+
+	decimal = i = 0;
+	while (b[i])
 	{
-		if (b[size] == '0')
+		if (b[i] > 49)
 		{
-			pos *= 2;
-			continue;
+			return (0);
 		}
-		else if (b[size] == '1')
+		else if (b[i] == 49)
 		{
-			uint += pos;
-			pos *= 2;
-			continue;
+			decimal <<= 1;
+			decimal += 1;
 		}
-		return (0);
+		else
+		{
+			decimal <<= 1;
+		}
+		i++;
 	}
-	return (uint);
+	return (decimal);
 }
