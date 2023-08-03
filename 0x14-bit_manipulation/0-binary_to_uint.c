@@ -5,26 +5,33 @@
  * @b: pointer to binary conv
  * Return: converted number else null
  */
+
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int conv = 0, mult = 1;
 	int size;
+	unsigned int uint, pos;
 
-	if (b == '\0')
+	if (!b)
 	{
 		return (0);
 	}
-	for (size = 0; b[size];)
+	for (size = 0; b[size]; size++)
+		;
+	size--;
+	for (pos = 1, uint = 0; size >= 0; size--)
 	{
-		size++;
+		if (b[size] == '0')
+		{
+			pos *= 2;
+			continue;
+		}
+		else if (b[size] == '1')
+		{
+			uint += pos;
+			pos *= 2;
+			continue;
+		}
+		return (0);
 	}
-	for (size -= 1; size >= 0; size--)
-	{
-		if (b[size] != '0' && b[size] != '1')
-			return (0);
-
-		conv += (b[size] - '0') * mult;
-		mult *= 2;
-	}
-	return (conv);
+	return (uint);
 }
