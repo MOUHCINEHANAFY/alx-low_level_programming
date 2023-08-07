@@ -7,29 +7,42 @@
  * @letters: number of letter to be printed
  * Return: writen letters of 0 if error
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t o, r, w;
-	char *variable;
+	size_t lRead, check;
+	char *buffer;
+	int openf;
 
-	if (filename == NULL)
+	if (!filename || !letters)
 	{
 		return (0);
 	}
-	variable = malloc(sizeof(char) * letters);
-	if (variable == NULL)
+	buffer = malloc(letters);
+	if (!buffer)
+		return (0);
+
+	openff = open(filename, O_RDONLY);
+	if (openf == -1)
+	{
+		free(buffer);
+		return (0);
+	}
+	lRead = read(openf, buffer, letters);
+	if (lRead < 1)
+	{
+		free(buffer);
+		close(openf);
+		return (0);
+	}
+	check = write(STDOUT_FILENO, buffer, lRead);
+
+	free(buffer);
+	close(openf);
+
+	if (!check || check != lRead)
 	{
 		return (0);
 	}
-	o = open(filename, O_RDONLY);
-	r = read(o, variable, letters);
-	w = write(STDOUT_FILENO, variable, r);
-	if (r == -1 || o == -1 || w == -1 || w != r)
-	{
-		free(variable);
-		return (0);
-	}
-	free(variable);
-	close(o);
-	return (w);
+	return (lRead);
 }
