@@ -5,4 +5,4 @@ NAME = school
 
 
 all : $(OBJ)
-	$(CC) -Wall -Werror -Wextra -pedantic $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
